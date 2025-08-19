@@ -1,3 +1,4 @@
+# Made By https://github.com/0xstealthybyte
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -131,3 +132,4 @@ def main():
             break
 if __name__ == "__main__":
     main()
+
