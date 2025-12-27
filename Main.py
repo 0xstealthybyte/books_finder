@@ -36,7 +36,7 @@ def map_choice_to_topic(choice):
     return topics[choice]
 def search_books_online(topic, book_name):
     search_query = f"{book_name} filetype:pdf"
-    duckduckgo_url = "https://html.duckduckgo.com/html/"  # DuckDuckGo's HTML search
+    duckduckgo_url = "https://html.duckduckgo.com/html/"  
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
     }
@@ -58,7 +58,7 @@ def search_books_online(topic, book_name):
         title = link.text.strip()
         url = link.get("href")
 
-        if "pdf" in url.lower():  # Only get PDF links
+        if "pdf" in url.lower():  
             results.append((title, url))
 
     if not results:
@@ -101,7 +101,7 @@ def download_book(url, book_name, title):
     except Exception as e:
         print(f"An unexpected error occurred while downloading the book '{title}': {e}")
 def download_books(results, book_name):
-    for idx, (title, link) in enumerate(results, start=1):  # Only unpack two values
+    for idx, (title, link) in enumerate(results, start=1):  
         print(f"Downloading book {idx}: {title}")
         download_book(link, book_name, title)
 def main():
@@ -132,4 +132,5 @@ def main():
             break
 if __name__ == "__main__":
     main()
+
 
